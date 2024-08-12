@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
 });
 
 // Application Routes
-app.use("/api/v1", router);
+app.use("/api", router);
 
 // route not found error
 app.use("*", notFound);
