@@ -27,7 +27,13 @@ const updateCategory = async (payload: {
   categoryId: string;
   data: TUpdateCategory;
 }) => {
-  if (await Category.findOne({ slug: payload.data.slug })) {
+  if (
+    payload.data?.slug &&
+    (await Category.findOne({
+      _id: { $ne: payload.categoryId },
+      slug: payload.data.slug,
+    }))
+  ) {
     throw new AppError(400, "Slug already exist");
   }
 
