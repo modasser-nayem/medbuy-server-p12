@@ -3,7 +3,7 @@ import {
   TRegisterUser,
   TRequestOTP,
   TVerifyOTP,
-} from "../interface/user.interface";
+} from "../interface/user";
 import AppError from "../error/AppError";
 import { User } from "../models/user.model";
 import {
